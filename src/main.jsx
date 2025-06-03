@@ -17,13 +17,13 @@ import { Facts } from './pages/Facts/facts';
 
 const App = () => {
   return (
-    <div>
+    <>
       <Header />
       <main>
         <Outlet />  
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 

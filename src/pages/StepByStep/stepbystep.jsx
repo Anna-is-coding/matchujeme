@@ -3,7 +3,7 @@ import './stepbystep.css';
 
 export const StepByStep = () => {
   return (
-    <section id="stepbystep">
+    <section id="stepByStep">
       <div>Step by Step</div>
     </section>
   );

@@ -3,7 +3,7 @@ import './homepage.css';
 
 export const HomePage = () => {
   return (
-    <section id="homepage">
+    <section id="homePage">
       <div>Ahoj, Matchujeme</div>
     </section>
   );

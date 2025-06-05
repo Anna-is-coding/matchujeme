@@ -1,0 +1,24 @@
+header {
+  position:fixed;
+  width: 100%;
+  display: flex;
+  top: -65px;
+  height: 4rem;
+  align-items: center;
+  font-family: 'Poiret One', sans-serif;
+  font-weight: 500;
+  justify-content: space-between;
+}
+
+.navbar a {
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  background-color: #aee0b5; 
+  color: #1e3a1e; 
+  transform: scale(1.05);
+  border-radius: 0.5rem;
+}
+

@@ -1,8 +1,15 @@
 /* přilepení footeru úplně dolů => do budoucna lepší sticky, do flexboxu layoutu, aby to fungovalo při scrollingu */
 
 footer {
-  position: absolute;
   width: 100%;
-  bottom: 0px;
-  background-color: #cbddd1;
+  background-color: #eff7e6;
+  border-top: 1px solid #dbeed0;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  color: #3a4e2b;
+  font-size: 0.875rem;
+  position: relative;
+  margin-top: auto;
 }
+

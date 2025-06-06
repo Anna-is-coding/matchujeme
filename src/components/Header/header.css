@@ -1,24 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Manrope:wght@600&display=swap');
+
 header {
-  position:fixed;
+  position: fixed;
+  z-index: 3;
   width: 100%;
   display: flex;
-  top: -65px;
   height: 4rem;
   align-items: center;
-  font-family: 'Poiret One', sans-serif;
-  font-weight: 500;
   justify-content: space-between;
+  font-family: 'Caveat', sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  background-color: #f4fce3;
+  padding: 0 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.navbar a {
-  transition: all 0.3s ease;
-  font-weight: bold;
+.logo-container {
+  animation: floatLogo 3s ease-in-out infinite;
 }
 
-.navbar a:hover {
-  background-color: #aee0b5; 
-  color: #1e3a1e; 
-  transform: scale(1.05);
-  border-radius: 0.5rem;
+@keyframes floatLogo {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
+
+.logo {
+  height: 2.55rem;
+  width: auto;
+}
+
+.burgermenu {
+  display: block;
+  background-color: transparent;
+  height: 2.55rem;
+  width: 2.55rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 6px;
+}
+
+/* RESPONSIVE MENU */
+.navmob {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  background-color: #fdfbec;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  z-index: 2;
+  background-image: url('/img/matchabackground.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: slideInMenu 0.4s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.navmob.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes slideInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navmob ul,
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul {
+  flex-direction: row;
+}
+
+.navmob a,
+.nav a {
+  background: none;
+  color: #3f6212;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: 'Manrope', sans-serif;
+  border: none;
+  padding: 0.25rem;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navmob a::after,
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #65a30d;
+  transition: width 0.3s ease-in-out;
+}
+
+.navmob a:hover::after,
+.nav a:hover::after {
+  width: 100%;
+}
+
+.navmob a.active,
+.nav a.active {
+  color: #1e3a08;
+}
+
+.nav {
+  display: none;
+}
+
+@media (min-width: 850px) {
+  .nav {
+    display: block;
+    padding-right: 2rem;
+  }
+
+  .navmob {
+    display: none !important;
+  }
+
+  .burgermenu {
+    display: none;
+  }
+}
+
+
 

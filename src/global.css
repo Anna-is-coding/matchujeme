@@ -2,6 +2,38 @@
 @plugin "daisyui";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
+:root {
+  --text-light: #fdfcf9;
+  --backgroung-light-blue: #002932;
+  --font-text: 'Open Sans', sans-serif;
+}
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: #cbddd1;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  color: #2e4426;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,7 +43,14 @@
 }
 
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-text);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--text-light);
+  color: var(--backgroung-light-blue);
 }
 
 .container {
@@ -19,3 +58,17 @@ html {
   margin-right: auto;
   margin-left: auto;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* odstraněny odkazy na neexistující matchujeme.svg */
+

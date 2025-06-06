@@ -195,7 +195,7 @@ export const Quiz = () => {
       <fieldset className="question-block">
         <legend>
           <strong>
-            {currentQuestion.id}) {currentQuestion.text}
+            {currentQuestion.id} {currentQuestion.text}
           </strong>
         </legend>
         {currentQuestion.options.map((opt) => (

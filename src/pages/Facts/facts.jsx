@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./facts.css";
+import { MatchaCard } from "../../components/MatchaCard/matchacard";
 
 const facts = [
   {
@@ -40,28 +41,14 @@ export const Facts = () => {
 
       <div className="cards">
         {facts.map((fact, index) => (
-          <div
+          <MatchaCard
             key={index}
-            className="card-flip"
+            title={fact.title}
+            description={fact.description}
+            image={fact.image}
+            flipped={flipped[index]}
             onClick={() => handleFlip(index)}
-          >
-            <div className={`card-inner ${flipped[index] ? "flipped" : ""}`}>
-              <div
-                className="card-front"
-                style={{
-                  backgroundImage: `url(${fact.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  color: "white",
-                }}
-              >
-                <h3>{fact.title}</h3>
-              </div>
-              <div className="card-back">
-                <p>{fact.description}</p>
-              </div>
-            </div>
-          </div>
+          />
         ))}
       </div>
     </section>

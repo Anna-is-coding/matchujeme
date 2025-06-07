@@ -7,13 +7,13 @@ import {
 } from 'react-router-dom';
 
 import './global.css';
-import { Header } from './components/Header/header';
-import { Footer } from './components/Footer/footer';
-import { HomePage } from './pages/HomePage/homepage';
-import { Quiz } from './pages/Quiz/quiz';
-import { Recipes } from './pages/Recipes/recipes';
-import { StepByStep } from './pages/StepByStep/stepbystep';
-import { Facts } from './pages/Facts/facts';
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
+import { HomePage } from './pages/HomePage/Homepage';
+import { Quiz } from './pages/Quiz/Quiz';
+import { Recipes } from './pages/Recipes/Recipes';
+import { StepByStep } from './pages/StepByStep/Stepbystep';
+import { Facts } from './pages/Facts/Facts';
 
 const App = () => {
   return (

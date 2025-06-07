@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './header.css';
-import burgerIcon from './icons/burgermenu.svg';
-import closeIcon from './icons/matchaclose.png';
-import logo from './icons/matchujeme-logo.svg';
+import burgerIcon from '/img/burgermenu.svg';
+import closeIcon from '/img/matchaclose.png';
+import logo from '/img/matchujeme-logo.svg';
 
 export const Header = () => {
   const [open, setOpen] = useState(false);

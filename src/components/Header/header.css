@@ -11,9 +11,9 @@ header {
   font-family: 'Caveat', sans-serif;
   font-weight: 500;
   font-size: 1.6rem;
-  background-color: #f4fce3;
+  background-color: var(--background-light-green);
   padding: 0 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px var(--background-black);
 }
 
 .logo-container {
@@ -51,7 +51,7 @@ header {
   left: 0;
   width: 100%;
   height: calc(100vh - 4rem);
-  background-color: #fdfbec;
+  background-color: var(--background-light-green);
   display: none;
   flex-direction: column;
   align-items: center;
@@ -101,7 +101,7 @@ header {
 .navmob a,
 .nav a {
   background: none;
-  color: #3f6212;
+  color: var(--light-green);
   font-weight: 600;
   font-size: 1.1rem;
   font-family: 'Manrope', sans-serif;
@@ -120,7 +120,7 @@ header {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #65a30d;
+  background-color: var(--background-green);
   transition: width 0.3s ease-in-out;
 }
 
@@ -131,7 +131,7 @@ header {
 
 .navmob a.active,
 .nav a.active {
-  color: #1e3a08;
+  color: var(--text-dark-green);
 }
 
 .nav {

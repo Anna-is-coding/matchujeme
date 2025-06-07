@@ -1,6 +1,6 @@
 .matcha-section {
-  background-color: #f4faef;
-  color: #2e4426;
+  background-color: var(--background-page);
+  color: var(--text-dark-green);
   padding: 6rem 1rem 4rem;
   text-align: center;
   min-height: 100vh;
@@ -15,7 +15,7 @@
 
 .intro p {
   font-size: 1.2rem;
-  color: #3a4e2b;
+  color: var(--intro-green);
   margin-bottom: 3rem;
 }
 
@@ -56,11 +56,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.card-front {
-  background-color: #448062;
+  box-shadow: 0 4px 10px var(--background-black);
 }
 
 .card-front h3 {
@@ -69,7 +65,7 @@
 }
 
 .card-back {
-  background-color: white;
+  background-color: var(--border-green);
   transform: rotateY(180deg);
   font-size: 1rem;
 }

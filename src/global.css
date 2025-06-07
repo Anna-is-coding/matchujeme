@@ -4,8 +4,17 @@
 
 :root {
   --text-light: #fdfcf9;
-  --backgroung-light-blue: #002932;
   --font-text: 'Open Sans', sans-serif;
+  --background-black: #0000000d;
+  --background-light-green: #f4fce3; 
+  --text-dark-green: #2e4426;
+  --border-green: #cde4b1; 
+  --light-green: #3f6212;
+  --background-green: #65a30d;
+  --intro-green: #3a4e2b;
+  --text-light-green: #5f7d3a;
+  --background-page: #cbddd1;
+  
 }
 
 html, body, #app {
@@ -25,13 +34,13 @@ main {
 }
 
 footer {
-  background-color: #cbddd1;
+  background-color: var(--background-light-green);
   padding: 2rem 1rem;
   text-align: center;
   font-family: 'Manrope', sans-serif;
   font-size: 1rem;
-  color: #2e4426;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+  color: var(--text-dark-green);
+  box-shadow: 0 -2px 6px var(--background-black);
 }
 
 * {
@@ -70,5 +79,4 @@ a {
   color: inherit;
 }
 
-/* odstraněny odkazy na neexistující matchujeme.svg */
 

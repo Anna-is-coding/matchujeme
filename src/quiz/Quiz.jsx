@@ -132,56 +132,51 @@ export const Quiz = () => {
     const newAnswers = { ...answers, [questionId]: selectedOption };
     setAnswers(newAnswers);
 
+    // Kontrola, jestli nejsem na poslední otázce
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((idx) => idx + 1);
       setSelectedOption('');
     } else {
-      // poslední otázka
+      // Pokud je to poslední otázka, zavolá se
       calculateResults(newAnswers);
     }
   };
 
   const calculateResults = (ans) => {
+    // spočítání hlasů
     const counts = { zen: 0, influencer: 0, zdravy: 0, kofein: 0 };
     Object.values(ans).forEach((val) => {
       if (counts[val] !== undefined) counts[val]++;
     });
+
+    // zjistí se nejvyšší počet
     const maxCount = Math.max(...Object.values(counts));
+
+    // najdeme všechny klíče, které mají tento počet
     const winners = Object.entries(counts)
       .filter(([_, count]) => count === maxCount)
       .map(([key]) => key);
-    setResultKeys(winners);
+
+    // pokud je remíza, vybere se náhodně jeden
+    const finalKey =
+      winners.length === 1
+        ? winners[0]
+        : winners[Math.floor(Math.random() * winners.length)];
+
+    // uložíme jen jediného vítěze
+    setResultKeys([finalKey]);
   };
 
-  // Zobrazení výsledku
-  if (resultKeys.length > 0) {
-    if (resultKeys.length === 1) {
-      const { title, description, tip } = results[resultKeys[0]];
-      return (
-        <div className="result-container">
-          <h2>Výsledek: {title}</h2>
-          <p>{description}</p>
-          <p>
-            <em>{tip}</em>
-          </p>
-          <button onClick={() => window.location.reload()}>Zkusit znovu</button>
-        </div>
-      );
-    }
-    const mixedTitles = resultKeys.map((k) => results[k].title).join(' & ');
-    const mixedDescriptions = resultKeys
-      .map((k) => `• ${results[k].description}`)
-      .join('\n\n');
-    const mixedTips = resultKeys.map((k) => `• ${results[k].tip}`).join('\n\n');
+  // Zobrazení výsledku (vždy jen jeden)
+  if (resultKeys.length === 1) {
+    const { title, description, tip } = results[resultKeys[0]];
     return (
       <div className="result-container">
-        <h2>Výsledek: Mix {mixedTitles}</h2>
-        <div style={{ textAlign: 'left', whiteSpace: 'pre-wrap' }}>
-          <p>{mixedDescriptions}</p>
-          <p>
-            <em>{mixedTips}</em>
-          </p>
-        </div>
+        <h2>Výsledek: {title}</h2>
+        <p>{description}</p>
+        <p>
+          <em>{tip}</em>
+        </p>
         <button onClick={() => window.location.reload()}>Zkusit znovu</button>
       </div>
     );
@@ -195,7 +190,7 @@ export const Quiz = () => {
       <fieldset className="question-block">
         <legend>
           <strong>
-            {currentQuestion.id} {currentQuestion.text}
+            {currentQuestion.id}. {currentQuestion.text}
           </strong>
         </legend>
         {currentQuestion.options.map((opt) => (

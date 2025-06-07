@@ -190,30 +190,32 @@ export const Quiz = () => {
   // Zobrazení jedné otázky s tlačítkem
   const currentQuestion = questions[currentIndex];
   return (
-    <div className="quiz-container">
-      <h1>Jaký typ matcha pijáka jsi?</h1>
-      <fieldset className="question-block">
-        <legend>
-          <strong>
-            {currentQuestion.id}. {currentQuestion.text}
-          </strong>
-        </legend>
-        {currentQuestion.options.map((opt) => (
-          <label key={opt.value} className="option-label">
-            <input
-              type="radio"
-              name={`question_${currentQuestion.id}`}
-              value={opt.value}
-              checked={selectedOption === opt.value}
-              onChange={() => setSelectedOption(opt.value)}
-            />
-            {opt.label}
-          </label>
-        ))}
-      </fieldset>
-      <button onClick={handleNext} className="next-button">
-        {currentIndex < questions.length - 1 ? 'Další' : 'Dokončit'}
-      </button>
-    </div>
+    <section className="quiz-section">
+      <div className="quiz-container">
+        <h1 className="quiz-title">Jaký typ matcha pijáka jsi?</h1>
+        <fieldset className="question-block">
+          <legend>
+            <strong>
+              {currentQuestion.id}. {currentQuestion.text}
+            </strong>
+          </legend>
+          {currentQuestion.options.map((opt) => (
+            <label key={opt.value} className="option-label">
+              <input
+                type="radio"
+                name={`question_${currentQuestion.id}`}
+                value={opt.value}
+                checked={selectedOption === opt.value}
+                onChange={() => setSelectedOption(opt.value)}
+              />
+              {opt.label}
+            </label>
+          ))}
+        </fieldset>
+        <button onClick={handleNext} className="next-button">
+          {currentIndex < questions.length - 1 ? 'Další' : 'Dokončit'}
+        </button>
+      </div>
+    </section>
   );
 };

@@ -1,11 +1,65 @@
+@import "tailwindcss";
+@plugin "daisyui";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+  --text-light: #fdfcf9;
+  --font-text: 'Open Sans', sans-serif;
+  --background-black: #0000000d;
+  --background-light-green: #f4fce3; 
+  --text-dark-green: #2e4426;
+  --border-green: #cde4b1; 
+  --light-green: #3f6212;
+  --background-green: #65a30d;
+  --intro-green: #3a4e2b;
+  --text-light-green: #5f7d3a;
+  --background-page: #cbddd1;
+  
+}
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: var(--background-light-green);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  color: var(--text-dark-green);
+  box-shadow: 0 -2px 6px var(--background-black);
+}
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-text);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--text-light);
+  color: var(--backgroung-light-blue);
 }
 
 .container {
@@ -13,3 +67,16 @@ html {
   margin-right: auto;
   margin-left: auto;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+

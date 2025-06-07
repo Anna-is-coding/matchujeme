@@ -3,8 +3,9 @@ import './footer.css';
 
 export const Footer = () => {
   return (
-    <footer>
-      <p>2025 Vendy a Anička, Project Matchujeme</p>
-    </footer>
-  );
-};
+    <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+  <aside>
+    <p>Copyright © 2025 Projekt Matchujeme. Vendy a Anička. Digitální akademie Czechitas</p>
+  </aside>
+</footer>
+  )}

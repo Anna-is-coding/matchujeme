@@ -177,7 +177,12 @@ export const Quiz = () => {
         <p>
           <em>{tip}</em>
         </p>
-        <button onClick={() => window.location.reload()}>Zkusit znovu</button>
+        <button
+          className="next-button"
+          onClick={() => window.location.reload()}
+        >
+          Zkusit znovu
+        </button>
       </div>
     );
   }

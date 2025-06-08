@@ -29,23 +29,53 @@ export const Quiz = () => {
     <section className="quiz-section">
       <div className="quiz-container">
         <h1 className="quiz-title">Jaký typ matcha pijáka jsi?</h1>
-        <div className="card-wrapper">
-          <TransitionWrapper nodeRef={nodeRef} transitionKey={currentIndex}>
-            <QuestionCard
-              question={currentQuestion}
-              selectedOption={selectedOption}
-              onSelect={setSelectedOption}
-            />
-          </TransitionWrapper>
+
+        {/*
+          Nový wrapper pro kartu + tlačítko,
+          aby společně měly pevnou šířku a flex-layout.
+        */}
+        <div className="quiz-card">
+          <div className="card-wrapper">
+            <TransitionWrapper nodeRef={nodeRef} transitionKey={currentIndex}>
+              <QuestionCard
+                question={currentQuestion}
+                selectedOption={selectedOption}
+                onSelect={setSelectedOption}
+              />
+            </TransitionWrapper>
+          </div>
+
+          <NextButton
+            isLast={currentIndex === questions.length - 1}
+            onClick={handleNext}
+          />
         </div>
-        <NextButton
-          isLast={currentIndex === questions.length - 1}
-          onClick={handleNext}
-        />
       </div>
     </section>
   );
 };
+
+// return (
+//   <section className="quiz-section">
+//     <div className="quiz-container">
+//       <h1 className="quiz-title">Jaký typ matcha pijáka jsi?</h1>
+//       <div className="card-wrapper">
+//         <TransitionWrapper nodeRef={nodeRef} transitionKey={currentIndex}>
+//           <QuestionCard
+//             question={currentQuestion}
+//             selectedOption={selectedOption}
+//             onSelect={setSelectedOption}
+//           />
+//         </TransitionWrapper>
+//       </div>
+//       <NextButton
+//         isLast={currentIndex === questions.length - 1}
+//         onClick={handleNext}
+//       />
+//     </div>
+//   </section>
+// );
+// };
 
 // ----------------------------------------------------------------------
 // Původní varianta 2

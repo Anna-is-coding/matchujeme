@@ -1,5 +1,69 @@
-.result-container {
-   max-width: 600px;
-   padding: 2rem;
-   text-align: center;
- }
+/* --- Override šířky kontejneru jen pro výsledky --- */
+.quiz-results .quiz-container {
+  /* roztáhne kontejner na 90% viewport šířky s maximem */
+  max-width: 90vw;
+  width: 100%;
+  padding: 2rem 1rem;
+  /* trochu menší vertikální padding */
+}
+
+/* Karta výsledku */
+.result-card {
+  display: flex;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+/* Levá část – text */
+.result-text {
+  flex: 1;
+  padding: 2rem;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.result-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.result-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Používáme stejný styl tlačítka jako v quiz.css */
+.result-text .next-button {
+  margin-top: 1rem;
+}
+
+/* Pravá část – obrázek */
+.result-image {
+  flex: 1;
+}
+
+.result-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobilní zobrazení – karta pod sebou */
+@media (max-width: 768px) {
+  .result-card {
+    flex-direction: column;
+  }
+
+  .result-image {
+    height: 200px;
+  }
+
+  .result-text {
+    padding: 1.5rem;
+  }
+}

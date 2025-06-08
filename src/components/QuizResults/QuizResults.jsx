@@ -10,10 +10,10 @@ export const QuizResults = ({ resultKeys, results }) => {
 
   // Mapování klíč → cesta k obrázku ve složce public/img
   const images = {
-    zen: '/img/ZenPijak.png',
-    influencer: '/img/MatchaInfluencer.png',
-    zdravy: '/img/SuperFoodNadsenec.png',
-    kofein: '/img/KofeinovyZachranar.png',
+    zen: '/img/zenPijak.png',
+    influencer: '/img/matchaInfluencer.png',
+    zdravy: '/img/superFoodNadsenec.png',
+    kofein: '/img/kofeinovyZachranar.png',
   };
 
   const imgSrc = images[key];

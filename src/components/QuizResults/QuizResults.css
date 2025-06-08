@@ -1,10 +1,8 @@
 /* --- Override šířky kontejneru jen pro výsledky --- */
 .quiz-results .quiz-container {
-  /* roztáhne kontejner na 90% viewport šířky s maximem */
   max-width: 90vw;
   width: 100%;
   padding: 2rem 1rem;
-  /* trochu menší vertikální padding */
 }
 
 /* Karta výsledku */
@@ -24,6 +22,10 @@
   padding: 2rem;
   text-align: left;
   color: var(--color-text);
+  background: #EAF6EA;
+  /* svěží matcha barva */
+  position: relative;
+  /* pro absolutní pozici tlačítka */
 }
 
 .result-text h2 {
@@ -36,9 +38,20 @@
   line-height: 1.6;
 }
 
-/* Používáme stejný styl tlačítka jako v quiz.css */
+/* Větší mezera před tipem */
+.result-text p+p {
+  margin-top: 2rem;
+}
+
+/* Tlačítko vlevo dole */
 .result-text .next-button {
-  margin-top: 1rem;
+  position: absolute;
+  bottom: 2rem;
+  /* stejné odsazení jako spodní padding */
+  left: 2rem;
+  /* stejné odsazení jako padding vlevo */
+  margin: 0;
+  /* zrušíme původní margin-top */
 }
 
 /* Pravá část – obrázek */
@@ -65,5 +78,11 @@
 
   .result-text {
     padding: 1.5rem;
+    position: static;
+  }
+
+  .result-text .next-button {
+    position: static;
+    margin-top: 1rem;
   }
 }

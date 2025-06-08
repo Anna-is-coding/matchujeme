@@ -1,15 +1,15 @@
 /* přilepení footeru úplně dolů => do budoucna lepší sticky, do flexboxu layoutu, aby to fungovalo při scrollingu */
 
 footer {
-  width: 100%;
-  background-color: var(--background-light-green);
-  border-top: 1px solid var(--border-green);
-  padding: 1.5rem 0;
-  text-align: center;
-  font-family: 'Manrope', sans-serif;
-  color: var(--text-dark-green);
-  font-size: 0.875rem;
   position: relative;
+  width: 100%;
   margin-top: auto;
+  padding: 1.5rem 0;
+  background-color: var(--background-light-green);
+  color: var(--text-dark-green);
+  font-family: 'Manrope', sans-serif;
+  text-align: center;
+  font-size: 0.875rem;
+  border-top: 1px solid var(--border-green);
+  box-shadow: 0 -2px 6px var(--background-black);
 }
-

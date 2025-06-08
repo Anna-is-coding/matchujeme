@@ -12,18 +12,18 @@ import { Footer } from './components/Footer/Footer';
 import { HomePage } from './pages/HomePage/Homepage';
 import { Quiz } from './pages/Quiz/quiz';
 import { Recipes } from './pages/Recipes/Recipes';
-import { StepByStep } from './pages/StepByStep/Stepbystep';
+import { StepByStep } from './pages/StepByStep/stepbystep';
 import { Facts } from './pages/Facts/Facts';
 
 const App = () => {
   return (
-    <div className="page-layout">
+    <>
       <Header />
       <main>
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 
@@ -48,7 +48,9 @@ const router = createBrowserRouter([
         path: 'recipes',
         element: <Recipes />,
       },
-      { path: 'stepbystep', element: <StepByStep /> },
+      { path: 'stepbystep/:stepId',
+        element: <StepByStep />,
+      },
     ],
   },
 ]);

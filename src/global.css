@@ -14,69 +14,33 @@
   --intro-green: #3a4e2b;
   --text-light-green: #5f7d3a;
   --background-page: #cbddd1;
-  
-}
-
-html, body, #app {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.page-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
-
-footer {
-  background-color: var(--background-light-green);
-  padding: 2rem 1rem;
-  text-align: center;
-  font-family: 'Manrope', sans-serif;
-  font-size: 1rem;
-  color: var(--text-dark-green);
-  box-shadow: 0 -2px 6px var(--background-black);
+  --header-height: 4rem;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
   text-decoration: none;
   list-style: none;
 }
 
-html {
-  font-family: var(--font-text);
-}
-
 body {
-  margin: 0;
-  padding: 0;
+  font-family: var(--font-text);
   background-color: var(--text-light);
   color: var(--backgroung-light-blue);
 }
 
-.container {
-  max-width: 26rem;
-  margin-right: auto;
-  margin-left: auto;
+main {
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
 }
 
 ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
-
-

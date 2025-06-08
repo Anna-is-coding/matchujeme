@@ -29,7 +29,7 @@ export const Header = () => {
         <ul>
           <li><NavLink to="/" onClick={toggleMenu}>Domů</NavLink></li>
           <li><NavLink to="/facts" onClick={toggleMenu}>Poznej Matchu</NavLink></li>
-          <li><NavLink to="/stepbystep" onClick={toggleMenu}>Příprava krok za krokem</NavLink></li>
+          <li><NavLink to="/stepbystep/1" onClick={toggleMenu}>Příprava krok za krokem</NavLink></li>
           <li><NavLink to="/recipes" onClick={toggleMenu}>Recepty</NavLink></li>
           <li><NavLink to="/quiz" onClick={toggleMenu}>Kvíz</NavLink></li>
         </ul>

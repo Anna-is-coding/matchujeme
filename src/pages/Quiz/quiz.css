@@ -1,11 +1,193 @@
+ /* ==============================
+   Proměnné
+   ============================== */
  :root {
    --color-text: #333333;
    --radius: 8px;
    --transition: 0.3s ease-in-out;
  }
 
- /* Základní reset pro full-height centering */
+ /* ==============================
+   Reset / základní layout
+   ============================== */
  html,
+ body {
+   margin: 0;
+   height: 100%;
+ }
+
+ .quiz-section {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background-color: var(--background-page);
+   color: var(--text-dark-green);
+   text-align: center;
+ }
+
+ /* ==============================
+   Kontejner kvízu
+   ============================== */
+ .quiz-container {
+   max-width: 700px;
+   width: 100%;
+   padding: 6rem 1rem 4rem;
+   margin: 0 auto;
+ }
+
+ /* ==============================
+   Nadpis
+   ============================== */
+ .quiz-title {
+   font-family: "Caveat", cursive;
+   font-size: 2rem;
+   font-weight: bold;
+   margin-bottom: 2rem;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+ }
+
+ /* ==============================
+   Animační wrapper
+   ============================== */
+ .card-wrapper {
+   position: relative;
+   width: 500px;
+   /* uprav podle potřeby */
+   height: 300px;
+   /* uprav podle potřeby */
+   margin: 0 auto 1rem;
+   /* dole mezera před tlačítkem */
+   overflow: hidden;
+   perspective: 1200px;
+ }
+
+ /* ==============================
+   Jediná karta (animovaný prvek)
+   ============================== */
+ .question-block {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: var(--background-green);
+   border-radius: var(--radius);
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+   padding: 1.5rem;
+   box-sizing: border-box;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+
+ /* ==============================
+   Radio buttony
+   ============================== */
+ .option-label {
+   display: flex;
+   align-items: center;
+   margin: 0.5rem 0;
+   cursor: pointer;
+   color: #fff;
+ }
+
+ .option-label input[type="radio"] {
+   accent-color: var(--background-green);
+   transform: scale(1.5);
+   transform-origin: 0 0;
+   margin-right: 1.5rem;
+   transition: transform var(--transition);
+ }
+
+ /* ==============================
+   Tlačítka Další / Odeslat
+   ============================== */
+ .next-button,
+ .submit-button {
+   display: inline-block;
+   border: none;
+   border-radius: var(--radius);
+   padding: 0.75rem 1.5rem;
+   font-size: 1rem;
+   cursor: pointer;
+   transition: background var(--transition), transform var(--transition);
+   background: var(--background-green);
+   color: #fff;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+ }
+
+ .next-button:hover,
+ .submit-button:hover {
+   transform: scale(1.05);
+ }
+
+ /* pokud tlačítko následuje hned po .card-wrapper */
+ .card-wrapper+.next-button {
+   margin-left: auto;
+ }
+
+ /* ==============================
+   Přechodové třídy pro react-transition-group
+   ============================== */
+ .card-enter {
+   transform: rotateY(90deg);
+   opacity: 0.5;
+ }
+
+ .card-enter-active {
+   transform: rotateY(0deg);
+   opacity: 1;
+   transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+ }
+
+ .card-exit {
+   transform: rotateY(0deg);
+   opacity: 1;
+ }
+
+ .card-exit-active {
+   transform: rotateY(-90deg);
+   opacity: 0.5;
+   transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* --------------------------------------
+Původní verze */
+
+ /* :root {
+   --color-text: #333333;
+   --radius: 8px;
+   --transition: 0.3s ease-in-out;
+ }
+
+ /* Základní reset pro full-height centering = je tohle potřeba?*/
+ /* html,
  body {
    height: 100%;
    margin: 0;
@@ -26,7 +208,7 @@
    font-size: 2rem;
    margin: 0 0 2rem;
    font-weight: bold;
-   font-family: var(--font-text);
+   font-family: "Caveat", cursive;
    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
  }
 
@@ -36,19 +218,17 @@
    padding: 6rem 1rem 4rem;
  }
 
-
- .question-block legend {
+ .quiz-title */
+ /* .question-block legend {
    margin: -1.5rem 0 1rem;
- }
+ } */
 
- .question-block legend strong {
+ /* .question-block legend strong {
    display: block;
    font-size: 1.25rem;
    font-weight: bold;
    margin-bottom: -10rem;
  }
-
-
 
  .question-block {
    position: relative;
@@ -77,17 +257,17 @@
 
  .option-label input[type="radio"] {
    /* Zelená výplň vybraného stavu */
-   accent-color: var(--background-green);
+ /* accent-color: var(--background-green);
    transform: scale(1.5);
    margin-right: 1.5rem;
 
    /* pro lepší plynulost v Safari/Chrome */
-   -webkit-transform: scale(1.5);
+ /* -webkit-transform: scale(1.5);
    -webkit-transform-origin: 0 0;
    transform-origin: 0 0;
- }
+ } */
 
- .next-button,
+ /* .next-button,
  .submit-button {
    border: none;
    border-radius: var(--radius);
@@ -95,7 +275,7 @@
    font-size: 1rem;
    padding: 0.75rem 1.5rem;
    transition: background var(--transition), transform var(--transition);
- }
+ } 
 
  .next-button {
    background: var(--background-green);
@@ -114,12 +294,7 @@
    color: #fff;
  }
 
- .result-container {
-   margin: var(--header-offset) auto 2rem;
-   max-width: 600px;
-   padding: 2rem;
-   text-align: center;
- }
+
 
  .card-wrapper {
    position: relative;
@@ -127,38 +302,68 @@
    overflow: hidden;
    perspective: 1200px;
    height: 50%;
- }
+ } */
 
  /* Page‐turn efekt */
- .card-enter {
+ /* .card-enter {
    transform: rotateY(90deg);
    opacity: 0.5;
- }
+ } */
 
  /* animace vstupu do finální polohy */
- .card-enter-active {
+ /* .card-enter-active {
    transform: rotateY(0deg);
    opacity: 1;
    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
- }
+ } */
 
  /* počáteční stav při odchodu */
- .card-exit {
+ /* .card-exit {
    transform: rotateY(0deg);
    opacity: 1;
- }
+ } */
 
  /* animace odchodu doleva */
- .card-exit-active {
+ /* .card-exit-active {
    transform: rotateY(-90deg);
    opacity: 0.5;
    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
- }
+ } */
 
 
- .card-wrapper+.next-button {
+ /* .card-wrapper+.next-button {
    display: block;
-   /* aby margin-left fungoval */
+   /* aby margin-left fungoval 
    margin: 1rem 0 0 auto;
-   /* 1rem odsazení od karty, vlevo automaticky vyplní prostor */
- }
+   /* 1rem odsazení od karty, vlevo automaticky vyplní prostor 
+ } 
+
+
+ .card-wrapper {
+   position: relative;
+   width: 500px;
+   /* pevná šířka 
+   height: 300px;
+   /* pevná výška 
+   margin: 0 auto;
+   /* vystředění 
+   overflow: hidden;
+   /* schová přetékající obsah při animaci 
+ } 
+
+ samotná karta */
+ /* .question-block {
+   position: absolute; */
+ /* aby se vrstvy při animaci přesně překrývaly */
+ /* top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   /* pokud chceš tlačítko dole apod. 
+   padding: 20px; 
+   nebo jakýkoli odsazení 
+   box-sizing: border-box;
+ } */

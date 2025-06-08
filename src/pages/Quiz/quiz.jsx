@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import './quiz.css';
 
 export const Quiz = () => {
@@ -8,23 +9,23 @@ export const Quiz = () => {
       id: 1,
       text: 'Jak obvykle začínáš svůj den?',
       options: [
-        { label: 'a) Pomalu, s knihou nebo meditací.', value: 'zen' },
-        { label: 'b) Na mobilu, rychlá snídaně a ven.', value: 'influencer' },
-        { label: 'c) Cvičením nebo procházkou.', value: 'zdravy' },
-        { label: 'd) Všechno na poslední chvíli!', value: 'kofein' },
+        { label: ' Pomalu, s knihou nebo meditací.', value: 'zen' },
+        { label: ' Na mobilu, rychlá snídaně a ven.', value: 'influencer' },
+        { label: ' Cvičením nebo procházkou.', value: 'zdravy' },
+        { label: ' Všechno na poslední chvíli!', value: 'kofein' },
       ],
     },
     {
       id: 2,
       text: 'Co tě na matche nejvíc láká?',
       options: [
-        { label: 'a) Její klidná energie a tradice.', value: 'zen' },
+        { label: ' Její klidná energie a tradice.', value: 'zen' },
         {
-          label: 'b) Že je to trend a vypadá dobře na Instagramu.',
+          label: ' Že je to trend a vypadá dobře na Instagramu.',
           value: 'influencer',
         },
-        { label: 'c) Přírodní složení a zdravotní benefity.', value: 'zdravy' },
-        { label: 'd) Potřebuji prostě něco, co mě probudí.', value: 'kofein' },
+        { label: ' Přírodní složení a zdravotní benefity.', value: 'zdravy' },
+        { label: ' Potřebuji prostě něco, co mě probudí.', value: 'kofein' },
       ],
     },
     {
@@ -32,21 +33,21 @@ export const Quiz = () => {
       text: 'Kdy nejraději popíjíš matchu?',
       options: [
         {
-          label: 'a) Při tiché rituální ceremonii hned po probuzení.',
+          label: ' Při tiché rituální ceremonii hned po probuzení.',
           value: 'zen',
         },
         {
           label:
-            'b) V odpoledních hodinách v kavárně, kde fotím pro své sledující.',
+            ' V odpoledních hodinách v kavárně, kde fotím pro své sledující.',
           value: 'influencer',
         },
         {
-          label: 'c) Po ranním cvičení jako součást svého zdravého režimu.',
+          label: ' Po ranním cvičení jako součást svého zdravého režimu.',
           value: 'zdravy',
         },
         {
           label:
-            'd) Ráno těsně před odchodem do práce, když potřebuji rychlý boost.',
+            ' Ráno těsně před odchodem do práce, když potřebuji rychlý boost.',
           value: 'kofein',
         },
       ],
@@ -57,22 +58,22 @@ export const Quiz = () => {
       options: [
         {
           label:
-            'a) Tradičně, s bambusovou miskou (chawan) a metličkou (chasen).',
+            ' Tradičně, s bambusovou miskou (chawan) a metličkou (chasen).',
           value: 'zen',
         },
         {
           label:
-            'b) Stylově v instagram-friendly šejku nebo s latte art, aby to vypadalo skvěle.',
+            ' Stylově v instagram-friendly šejku nebo s latte art, aby to vypadalo skvěle.',
           value: 'influencer',
         },
         {
           label:
-            'c) Smíchám ji do zeleného smoothie, bowl nebo přidám proteinový prášek.',
+            ' Smíchám ji do zeleného smoothie, bowl nebo přidám proteinový prášek.',
           value: 'zdravy',
         },
         {
           label:
-            'd) Kupuji si ji hotovou „to-go“ v kelímku, abych ji mohl/a pít cestou.',
+            ' Kupuji si ji hotovou „to-go“ v kelímku, abych ji mohl/a pít cestou.',
           value: 'kofein',
         },
       ],
@@ -81,10 +82,10 @@ export const Quiz = () => {
       id: 5,
       text: 'Co je podle tebe ideální místo na matcha chvíli?',
       options: [
-        { label: 'a) Doma v tichu.', value: 'zen' },
-        { label: 'b) V kavárně s designem.', value: 'influencer' },
-        { label: 'c) Na výletě nebo v parku.', value: 'zdravy' },
-        { label: 'd) Kdekoli, hlavně rychle.', value: 'kofein' },
+        { label: ' Doma v tichu.', value: 'zen' },
+        { label: ' V kavárně s designem.', value: 'influencer' },
+        { label: ' Na výletě nebo v parku.', value: 'zdravy' },
+        { label: ' Kdekoli, hlavně rychle.', value: 'kofein' },
       ],
     },
   ];
@@ -121,6 +122,7 @@ export const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState('');
   const [answers, setAnswers] = useState({});
   const [resultKeys, setResultKeys] = useState([]);
+  const nodeRef = useRef(null);
 
   // Po kliknutí na Další
   const handleNext = () => {
@@ -193,25 +195,37 @@ export const Quiz = () => {
     <section className="quiz-section">
       <div className="quiz-container">
         <h1 className="quiz-title">Jaký typ matcha pijáka jsi?</h1>
-        <fieldset className="question-block">
-          <legend>
-            <strong>
-              {currentQuestion.id}. {currentQuestion.text}
-            </strong>
-          </legend>
-          {currentQuestion.options.map((opt) => (
-            <label key={opt.value} className="option-label">
-              <input
-                type="radio"
-                name={`question_${currentQuestion.id}`}
-                value={opt.value}
-                checked={selectedOption === opt.value}
-                onChange={() => setSelectedOption(opt.value)}
-              />
-              {opt.label}
-            </label>
-          ))}
-        </fieldset>
+        <div className="card-wrapper">
+          <SwitchTransition mode="out-in">
+            <CSSTransition
+              key={currentIndex}
+              classNames="card"
+              timeout={500}
+              nodeRef={nodeRef}
+              mountOnEnter
+              unmountOnExit
+            >
+              <fieldset ref={nodeRef} className="question-block">
+                <legend>
+                  <strong>{currentQuestion.text}</strong>
+                </legend>
+                {currentQuestion.options.map((opt) => (
+                  <label key={opt.value} className="option-label">
+                    <input
+                      type="radio"
+                      name={`question_${currentQuestion.id}`}
+                      value={opt.value}
+                      checked={selectedOption === opt.value}
+                      onChange={() => setSelectedOption(opt.value)}
+                    />
+                    {opt.label}
+                  </label>
+                ))}
+              </fieldset>
+            </CSSTransition>
+          </SwitchTransition>
+        </div>
+
         <button onClick={handleNext} className="next-button">
           {currentIndex < questions.length - 1 ? 'Další' : 'Dokončit'}
         </button>
@@ -219,3 +233,30 @@ export const Quiz = () => {
     </section>
   );
 };
+
+// --------------------------------------
+// Původní varianta
+//         <fieldset className="question-block">
+//           <legend>
+//             <strong>{currentQuestion.text}</strong>
+//           </legend>
+//           {currentQuestion.options.map((opt) => (
+//             <label key={opt.value} className="option-label">
+//               <input
+//                 type="radio"
+//                 name={`question_${currentQuestion.id}`}
+//                 value={opt.value}
+//                 checked={selectedOption === opt.value}
+//                 onChange={() => setSelectedOption(opt.value)}
+//               />
+//               {opt.label}
+//             </label>
+//           ))}
+//         </fieldset>
+//         <button onClick={handleNext} className="next-button">
+//           {currentIndex < questions.length - 1 ? 'Další' : 'Dokončit'}
+//         </button>
+//       </div>
+//     </section>
+//   );
+// };

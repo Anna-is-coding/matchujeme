@@ -1,7 +1,7 @@
 .matcha-section {
   background-color: var(--background-page);
   color: var(--text-dark-green);
-  padding: 6rem 1rem 4rem;
+  padding: 2rem 1rem 4rem;
   text-align: center;
   min-height: 100vh;
 }

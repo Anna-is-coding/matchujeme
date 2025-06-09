@@ -1,17 +1,100 @@
-.detail {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 16px;
+/* Wrapper (dědí background z .recipes-section) */
+.recipe-detail {
+  padding: 2rem 1rem 4rem;
+  min-height: 100vh;
+  color: var(--text-dark-green);
 }
 
-.detail img {
-  width: 100%;
+/* Zpět */
+.back-button {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark-green);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+/* Hlavní karta */
+.recipe-card {
+  display: flex;
+  background: #fff;
   border-radius: 8px;
-  object-fit: cover;
-  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.detail h1 {
-  margin-bottom: 12px;
-  text-align: center;
+/* Obrázek vlevo */
+.image-container {
+  flex: 1 1 40%;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text vpravo */
+.content-container {
+  flex: 1 1 60%;
+  padding: 2rem;
+  text-align: left;
+}
+
+.content-container h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Caveat', cursive;
+}
+
+.servings {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--intro-green);
+  font-weight: 500;
+}
+
+/* Sekce ingredience / postup */
+.ingredients,
+.instructions {
+  margin-bottom: 2rem;
+}
+
+.ingredients h3,
+.instructions h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.ingredients ul,
+.instructions ol {
+  padding-left: 1.25rem;
+}
+
+.ingredients li,
+.instructions li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Responsivita: pod sebe na mobilu */
+@media (max-width: 600px) {
+  .recipe-card {
+    flex-direction: column;
+  }
+
+  .image-container {
+    height: 250px;
+  }
+
+  .content-container {
+    padding: 1.5rem;
+  }
 }

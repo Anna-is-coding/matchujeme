@@ -10,15 +10,19 @@ export const Recipes = () => {
   const recipe = id && recipes.find((r) => r.id === +id);
 
   return (
-    <main className="recipes-page">
+    <section className="recipes-section">
       {!id && (
         <>
-          <h1>Recepty</h1>
+          <div className="intro">
+            <h2>Recepty</h2>
+            <p>Objev nové chutě a inspiraci pro svou kuchyni</p>
+          </div>
           <RecipeGrid list={recipes} />
         </>
       )}
+
       {id && recipe && <RecipeDetail recipe={recipe} />}
       {id && !recipe && <p>Recept nenalezen 😕</p>}
-    </main>
+    </section>
   );
 };

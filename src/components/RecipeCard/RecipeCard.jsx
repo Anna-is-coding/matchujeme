@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./RecipeCard.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './RecipeCard.css';
 
 export const RecipeCard = ({ recipe }) => (
   <Link to={`/recipes/${recipe.id}`} className="card">

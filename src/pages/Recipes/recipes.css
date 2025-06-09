@@ -1,8 +1,20 @@
-.recipes-page {
-  padding: 16px;
+.recipes-section {
+  background-color: var(--background-page);
+  color: var(--text-dark-green);
+  padding: 2rem 1rem 4rem;
+  text-align: center;
+  min-height: 100vh;
 }
 
-.recipes-page h1 {
-  text-align: center;
-  margin-bottom: 24px;
+.intro h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: 'Caveat', cursive;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  color: var(--intro-green);
+  margin-bottom: 3rem;
 }

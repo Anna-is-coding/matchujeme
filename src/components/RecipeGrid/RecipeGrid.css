@@ -1,5 +1,18 @@
+/* src/components/RecipeGrid/RecipeGrid.css */
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  /* výchozí: 1 karta na řádek (mobil) */
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* od tabletových šířek ‹600px› a výše: 2 karty vedle sebe */
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

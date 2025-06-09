@@ -6,22 +6,20 @@ import './global.css';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { HomePage } from './pages/HomePage/Homepage';
-import { Quiz } from './pages/Quiz/Quiz';
-import { Recipes } from './pages/Recipes/Recipes';
+import { Quiz } from './pages/Quiz/quiz';
+import { Recipes } from './pages/Recipes/recipes';
 import { StepByStep } from './pages/StepByStep/stepbystep';
 import { Facts } from './pages/Facts/Facts';
 
-const App = () => {
-  return (
-    <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-    </>
-  );
-};
+const App = () => (
+  <>
+    <Header />
+    <main>
+      <Outlet />
+    </main>
+    <Footer />
+  </>
+);
 
 const router = createBrowserRouter([
   {
@@ -44,6 +42,7 @@ const router = createBrowserRouter([
         path: 'recipes',
         element: <Recipes />,
       },
+      { path: 'recipes/:id', element: <Recipes /> }, 
       { path: 'stepbystep/:stepId', element: <StepByStep /> },
     ],
   },

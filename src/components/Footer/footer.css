@@ -1,5 +1,3 @@
-/* přilepení footeru úplně dolů => do budoucna lepší sticky, do flexboxu layoutu, aby to fungovalo při scrollingu */
-
 footer {
   position: relative;
   width: 100%;

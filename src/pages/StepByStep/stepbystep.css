@@ -1,0 +1,42 @@
+.stepbystep-section {
+  padding: 2rem 1rem 4rem;
+}
+
+.step-completed::before {
+  background-color: #3f6212 !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.step-completed::after {
+  background-color: #3f6212 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.step-custom-active::before {
+  background-color: #3f6212 !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.step-custom-active::after {
+  background-color: #3f6212 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.step-custom::before {
+  background-color: #cde4b1 !important;
+  color: #2e4426 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.step-custom::after {
+  background-color: #cde4b1 !important;
+  border: none !important;
+  box-shadow: none !important;
+}

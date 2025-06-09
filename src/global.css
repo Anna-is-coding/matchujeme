@@ -6,24 +6,18 @@
   --text-light: #fdfcf9;
   --font-text: 'Open Sans', sans-serif;
   --background-black: #0000000d;
-  --background-light-green: #f4fce3; 
+  --background-light-green: #f4fce3;
   --text-dark-green: #2e4426;
-  --border-green: #cde4b1; 
+  --border-green: #cde4b1;
   --light-green: #3f6212;
   --background-green: #65a30d;
   --intro-green: #3a4e2b;
   --text-light-green: #5f7d3a;
   --background-page: #cbddd1;
   --header-height: 4rem;
+  --background-page2: #88a57a;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-}
 
 body {
   font-family: var(--font-text);
@@ -34,6 +28,9 @@ body {
 main {
   margin-top: var(--header-height);
   min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 ul {

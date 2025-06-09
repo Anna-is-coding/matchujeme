@@ -1,5 +1,5 @@
 .matcha-section {
-  background-color: var(--background-page);
+  background-color: var(--background-page2);
   color: var(--text-dark-green);
   padding: 2rem 1rem 4rem;
   text-align: center;
@@ -8,9 +8,7 @@
 
 .intro h2 {
   font-size: 2.5rem;
-  font-weight: 600;
   margin-bottom: 0.5rem;
-  font-family: 'Caveat', cursive;
 }
 
 .intro p {
@@ -69,5 +67,3 @@
   transform: rotateY(180deg);
   font-size: 1rem;
 }
-
-

@@ -27,21 +27,51 @@ export const Header = () => {
 
       <div className={open ? 'navmob open' : 'navmob closenavmob'}>
         <ul>
-          <li><NavLink to="/" onClick={toggleMenu}>Domů</NavLink></li>
-          <li><NavLink to="/facts" onClick={toggleMenu}>Poznej Matchu</NavLink></li>
-          <li><NavLink to="/stepbystep/1" onClick={toggleMenu}>Příprava krok za krokem</NavLink></li>
-          <li><NavLink to="/recipes" onClick={toggleMenu}>Recepty</NavLink></li>
-          <li><NavLink to="/quiz" onClick={toggleMenu}>Kvíz</NavLink></li>
+          <li>
+            <NavLink to="/" onClick={toggleMenu}>
+              Domů
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/facts" onClick={toggleMenu}>
+              Poznej Matchu
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/stepbystep/1" onClick={toggleMenu}>
+              Příprava krok za krokem
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/recipes" onClick={toggleMenu}>
+              Recepty
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/quiz" onClick={toggleMenu}>
+              Kvíz
+            </NavLink>
+          </li>
         </ul>
       </div>
 
       <div className="nav">
         <ul>
-          <li><NavLink to="/">Domů</NavLink></li>
-          <li><NavLink to="/facts">Poznej Matchu</NavLink></li>
-          <li><NavLink to="/stepbystep">Příprava krok za krokem</NavLink></li>
-          <li><NavLink to="/recipes">Recepty</NavLink></li>
-          <li><NavLink to="/quiz">Kvíz</NavLink></li>
+          <li>
+            <NavLink to="/">Domů</NavLink>
+          </li>
+          <li>
+            <NavLink to="/facts">Poznej Matchu</NavLink>
+          </li>
+          <li>
+            <NavLink to="/stepbystep/1">Příprava krok za krokem</NavLink>
+          </li>
+          <li>
+            <NavLink to="/recipes">Recepty</NavLink>
+          </li>
+          <li>
+            <NavLink to="/quiz">Kvíz</NavLink>
+          </li>
         </ul>
       </div>
     </header>

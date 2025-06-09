@@ -1,10 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { 
-  createBrowserRouter,
-  RouterProvider,
-  Outlet, // zde se vykreslí aktuální podstránka podle URL (třeba <Facts />)
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
 import './global.css';
 import { Header } from './components/Header/Header';
@@ -30,10 +26,10 @@ const App = () => {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App/>,
+    element: <App />,
     children: [
       {
-        index: true, // výchozí stránka pro path "/"
+        index: true,
         element: <HomePage />,
       },
       {
@@ -48,15 +44,11 @@ const router = createBrowserRouter([
         path: 'recipes',
         element: <Recipes />,
       },
-      { path: 'stepbystep/:stepId',
-        element: <StepByStep />,
-      },
+      { path: 'stepbystep/:stepId', element: <StepByStep /> },
     ],
   },
 ]);
 
-// render celé aplikace
 createRoot(document.getElementById('app')).render(
-  <RouterProvider router={router} />
+  <RouterProvider router={router} />,
 );
-

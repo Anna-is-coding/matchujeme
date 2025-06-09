@@ -22,9 +22,12 @@ header {
 }
 
 @keyframes floatLogo {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
@@ -45,7 +48,6 @@ header {
   border-radius: 6px;
 }
 
-/* RESPONSIVE MENU */
 .navmob {
   position: absolute;
   top: 4rem;
@@ -60,7 +62,7 @@ header {
   gap: 2rem;
   padding: 2rem 0;
   z-index: 2;
-  background-image: url('/img/matchabackground.jpg');
+  background-image: url('/img/matcha-icon1.svg');
   background-size: cover;
   background-position: center;
   animation: slideInMenu 0.4s ease-out forwards;
@@ -79,6 +81,7 @@ header {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -130,6 +133,11 @@ header {
   width: 100%;
 }
 
+.navmob a:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
 .navmob a.active,
 .nav a.active {
   color: var(--text-dark-green);
@@ -153,6 +161,3 @@ header {
     display: none;
   }
 }
-
-
-

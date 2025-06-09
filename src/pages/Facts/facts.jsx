@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import "./facts.css";
-import { MatchaCard } from "../../components/MatchaCard/matchacard";
-import { facts } from "./factsData";
-
+import React, { useState } from 'react';
+import './facts.css';
+import { MatchaCard } from '../../components/MatchaCard/matchacard';
+import { facts } from './factsData';
 
 export const Facts = () => {
   const [flipped, setFlipped] = useState(Array(facts.length).fill(false));
@@ -16,8 +15,10 @@ export const Facts = () => {
   return (
     <section className="matcha-section">
       <div className="intro">
-        <h2>Poznej matchu</h2>
-        <p>Objev fascinující svět zeleného prášku</p>
+        <h2 className="text-[2.5rem] mb-2 text-[var(--text-dark-green)] font-display tracking-wide leading-snug text-center">
+          POZNEJ MATCHU
+        </h2>
+        <p>Objev fascinující svět zeleného prášku.</p>
       </div>
 
       <div className="cards">
@@ -35,4 +36,3 @@ export const Facts = () => {
     </section>
   );
 };
-

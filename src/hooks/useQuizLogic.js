@@ -41,6 +41,13 @@ export const useQuizLogic = () => {
     }
   };
 
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setSelectedOption(null); // smažeme předchozí výběr
+      setCurrentIndex(currentIndex - 1); // jdeme o jednu otázku zpět
+    }
+  };
+
   return {
     currentIndex,
     selectedOption,
@@ -51,5 +58,6 @@ export const useQuizLogic = () => {
     results,
     setSelectedOption,
     handleNext,
+    handlePrev,
   };
 };

@@ -1,61 +1,107 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet, // zde se vykreslí aktuální podstránka podle URL (třeba <Facts />)
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+
 
 import './global.css';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { HomePage } from './pages/HomePage/Homepage';
 import { Quiz } from './pages/Quiz/quiz';
-import { Recipes } from './pages/Recipes/Recipes';
+import { Recipes } from './pages/Recipes/recipes';
 import { StepByStep } from './pages/StepByStep/stepbystep';
 import { Facts } from './pages/Facts/Facts';
 
-const App = () => {
-  return (
-    <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-    </>
-  );
-};
+const App = () => (
+  <>
+    <Header />
+    <main>
+      <Outlet />
+    </main>
+    <Footer />
+  </>
+);
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
-      {
-        index: true, // výchozí stránka pro path "/"
-        element: <HomePage />,
-      },
-      {
-        path: 'facts',
-        element: <Facts />,
-      },
-      {
-        path: 'quiz',
-        element: <Quiz />,
-      },
-      {
-        path: 'recipes',
-        element: <Recipes />,
-      },
-      { path: 'stepbystep/:stepId',
-        element: <StepByStep />,
-      },
+      { index: true, element: <HomePage /> },
+      { path: 'facts', element: <Facts /> },
+      { path: 'quiz', element: <Quiz /> },
+      { path: 'recipes', element: <Recipes /> }, // seznam kartiček
+      { path: 'recipes/:id', element: <Recipes /> }, // detail jednoho receptu
+      { path: 'stepbystep/:stepId', element: <StepByStep /> },
     ],
   },
 ]);
 
-// render celé aplikace
 createRoot(document.getElementById('app')).render(
   <RouterProvider router={router} />,
 );
+
+
+// Původní verze před začleněním receptu
+// import React from 'react';
+// import { createRoot } from 'react-dom/client';
+// import {
+//   createBrowserRouter,
+//   RouterProvider,
+//   Outlet, // zde se vykreslí aktuální podstránka podle URL (třeba <Facts />)
+// } from 'react-router-dom';
+
+// import './global.css';
+// import { Header } from './components/Header/Header';
+// import { Footer } from './components/Footer/Footer';
+// import { HomePage } from './pages/HomePage/Homepage';
+// import { Quiz } from './pages/Quiz/Quiz';
+// import { Recipes } from './pages/Recipes/recipes';
+// import { StepByStep } from './pages/StepByStep/stepbystep';
+// import { Facts } from './pages/Facts/Facts';
+
+// const App = () => {
+//   return (
+//     <>
+//       <Header />
+//       <main>
+//         <Outlet />
+//       </main>
+//       <Footer />
+//     </>
+//   );
+// };
+
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <App/>,
+//     children: [
+//       {
+//         index: true, // výchozí stránka pro path "/"
+//         element: <HomePage />,
+//       },
+//       {
+//         path: 'facts',
+//         element: <Facts />,
+//       },
+//       {
+//         path: 'quiz',
+//         element: <Quiz />,
+//       },
+//       {
+//         path: 'recipes',
+//         element: <Recipes />,
+//       },
+//       { path: 'stepbystep/:stepId',
+//         element: <StepByStep />,
+//       },
+//     ],
+//   },
+// ]);
+
+// // render celé aplikace
+// createRoot(document.getElementById('app')).render(
+//   <RouterProvider router={router} />
+// );
+

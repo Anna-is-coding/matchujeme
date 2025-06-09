@@ -2,11 +2,12 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
+
 import './global.css';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { HomePage } from './pages/HomePage/Homepage';
-import { Quiz } from './pages/Quiz/Quiz';
+import { Quiz } from './pages/Quiz/quiz';
 import { Recipes } from './pages/Recipes/recipes';
 import { StepByStep } from './pages/StepByStep/stepbystep';
 import { Facts } from './pages/Facts/Facts';
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('app')).render(
   <RouterProvider router={router} />,
 );
+
 
 // Původní verze před začleněním receptu
 // import React from 'react';
@@ -102,3 +104,4 @@ createRoot(document.getElementById('app')).render(
 // createRoot(document.getElementById('app')).render(
 //   <RouterProvider router={router} />
 // );
+

@@ -10,9 +10,9 @@ export const QuizResults = ({ resultKeys, results }) => {
 
   // Mapování klíč → cesta k obrázku ve složce public/img
   const images = {
-    zen: '/img/zenPijak.png',
-    influencer: '/img/matchaInfluencer.png',
-    zdravy: '/img/superFoodNadsenec.png',
+    zen: '/img/ZenPijak.png',
+    influencer: '/img/MatchaInfluencer.png',
+    zdravy: '/img/SuperFoodNadsenec.png',
     kofein: '/img/kofeinovyZachranar.png',
   };
 
@@ -30,7 +30,7 @@ export const QuizResults = ({ resultKeys, results }) => {
           <div className="result-text">
             <h2>{title}</h2>
             <p>{description}</p>
-            <p className='result-tip'>
+            <p className="result-tip">
               <em>{tip}</em>
             </p>
             <button

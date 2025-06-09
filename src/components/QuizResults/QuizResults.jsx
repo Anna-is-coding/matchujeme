@@ -30,7 +30,7 @@ export const QuizResults = ({ resultKeys, results }) => {
           <div className="result-text">
             <h2>{title}</h2>
             <p>{description}</p>
-            <p>
+            <p className='result-tip'>
               <em>{tip}</em>
             </p>
             <button

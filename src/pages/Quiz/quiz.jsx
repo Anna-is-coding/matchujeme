@@ -32,7 +32,6 @@ export const Quiz = () => {
   return (
     <section className="quiz-section">
       <div className="quiz-container">
-        {/* nový wrapper, který drží titulek i kartu ve stejné šířce */}
         <div className="quiz-card">
           <h1 className="quiz-title">Jaký typ matcha pijáka jsi?</h1>
           <div className="card-wrapper">

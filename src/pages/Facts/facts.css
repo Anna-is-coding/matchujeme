@@ -13,7 +13,7 @@
 
 .intro p {
   font-size: 1.2rem;
-  color: var(--intro-green);
+  color: var(--border-green);
   margin-bottom: 3rem;
 }
 

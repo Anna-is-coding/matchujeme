@@ -24,7 +24,7 @@
    max-width: 600px;
    margin: 0 auto;
    /* více místa mezi hlavičkou stránky a názvem kvízu  */
-   padding: 3rem 1rem 3rem;
+   padding: 4rem 1rem 2rem;
  }
 
  /* 
@@ -36,6 +36,7 @@
    font-weight: 600;
    margin: 0 0 1rem;
    text-align: center;
+   color: var(--text-dark-green);
  }
 
  /* ==============================

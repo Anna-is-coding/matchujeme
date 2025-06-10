@@ -116,6 +116,20 @@ header {
   transition: color 0.3s;
 }
 
+.navmob a {
+  font-size: 1.4rem;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--background-page2);
+  border-radius: 9999px;
+  color: var(--text-dark-green);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navmob a:hover {
+  background-color: var(--background-page2);
+  transform: scale(1.05);
+}
+
 .navmob a::after,
 .nav a::after {
   content: "";
@@ -136,7 +150,6 @@ header {
 .navmob a:active {
   background-color: rgba(255, 255, 255, 0.1);
 }
-
 
 .navmob a.active,
 .nav a.active {

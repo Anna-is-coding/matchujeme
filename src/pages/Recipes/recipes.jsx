@@ -14,7 +14,7 @@ export const Recipes = () => {
       {!id && (
         <>
           <div className="intro">
-            <h2>Recepty</h2>
+            <h2>RECEPTY</h2>
             <p>Objev nové chutě a inspiraci pro svou kuchyni</p>
           </div>
           <RecipeGrid list={recipes} />

@@ -31,7 +31,7 @@ export const StepByStep = () => {
       className="stepbystep-section min-h-screen flex flex-col items-center bg-cover bg-center transition-all duration-500 ease-in-out"
       style={{ backgroundImage: "url('/img/matcha-icon1.png')" }}
     >
-      <h1 className="text-[2.5rem] mb-2 text-[var(--text-dark-green)] font-display tracking-wide leading-snug text-center">
+      <h1 className="text-[2.5rem] mb-2 text-[var(--text-dark-green)] font-semibold font-caveat tracking-wide leading-snug text-center">
         PŘÍPRAVA KROK ZA KROKEM
       </h1>
 

@@ -20,9 +20,9 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <main>
+      <section className="MatchaIntro">
         <MatchaIntro />
-      </main>
+      </section>
     </>
   );
 };

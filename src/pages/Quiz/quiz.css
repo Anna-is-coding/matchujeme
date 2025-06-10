@@ -180,9 +180,7 @@
   transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
 }
 
-/* ==============================
-   RESPONZIVNÍ VZHLED PRO MOBILY
-   ============================== */
+/* RESPONZIVNÍ VZHLED PRO MOBILY */
 @media (max-width: 768px) {
   .quiz-container {
     padding-top: 2rem;
@@ -200,4 +198,35 @@
   .question-title {
     font-size: 1.2rem;
   }
+}
+
+/* Jednotný vzhled pro radio buttony */
+.option-item input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  flex-shrink: 0;
+  background-color: #fff;
+  width: 1.2em;
+  height: 1.2em;
+  border: 2px solid #b0b0b0;
+  border-radius: 50%;
+  margin-right: 1rem;
+  position: relative;
+}
+
+.option-item input[type="radio"]:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+.option-item.selected input[type="radio"] {
+  border-color: var(--primary-color);
 }

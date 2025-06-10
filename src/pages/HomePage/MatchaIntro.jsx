@@ -1,7 +1,7 @@
 const MatchaIntro = () => {
   return (
     <section className="py-6 px-4 bg-[var(--background-page2)] border-t-2 border-b-2 border-[var(--text-light-green)] shadow-md">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-[var(--text-dark-green)] text-[1.35rem]">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-around items-start gap-8 text-[var(--text-dark-green)] text-[1.35rem]">
         <div className="flex flex-col items-center text-center">
           <img
             src="/img/matcha-icon1.svg"

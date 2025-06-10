@@ -9,31 +9,31 @@ export const StepCard = ({
   currentImage,
 }) => {
   return (
-    <div className="card flex flex-col-reverse md:flex-row max-w-2xl w-full h-auto md:h-[320px] border-green-700 shadow-xl text-center transition-all duration-500 ease-in-out overflow-hidden">
-      <figure className="w-full md:w-1/2 h-64 md:h-full">
+    <div className="max-w-5xl w-full mx-auto flex flex-col md:flex-row overflow-hidden rounded-xl shadow-xl border border-green-700 bg-white">
+      <div className="w-full md:w-1/2">
         <img
           src={currentImage}
           alt={`Krok ${stepId}`}
-          className="w-full h-full object-cover"
+          className="w-full h-auto md:h-full object-cover"
         />
-      </figure>
+      </div>
 
       <div
-        className="card-body w-full md:w-1/2 flex flex-col justify-center items-center p-6 
-        text-white shadow-inner 
-        bg-[var(--border-green)]"
+        className="w-full md:w-1/2 flex flex-col justify-center items-center p-6 text-white"
         style={{ backgroundColor: 'rgba(63, 98, 18, 0.95)' }}
       >
-        <h2 className="card-title text-3xl text-[var(--border-green)]">
+        <h2 className="text-2xl md:text-3xl font-bold text-[var(--border-green)] text-center mb-4">
           Krok {stepId}
         </h2>
-        <p className="text-xl text-[var(--border-green)]">{stepContent}</p>
+        <p className="text-lg md:text-xl text-[var(--border-green)] text-center">
+          {stepContent}
+        </p>
 
-        <div className="card-actions justify-center gap-6 mt-4">
+        <div className="flex gap-4 mt-6">
           {stepNumber > 1 && (
             <Link
               to={`/stepbystep/${stepNumber - 1}`}
-              className="btn text-white hover:opacity-90 border-none"
+              className="btn text-white border-none"
               style={{ backgroundColor: '#3f6212' }}
             >
               Zpět
@@ -42,7 +42,7 @@ export const StepCard = ({
           {stepNumber < totalSteps && (
             <Link
               to={`/stepbystep/${stepNumber + 1}`}
-              className="btn text-white hover:opacity-90 border-none"
+              className="btn text-white border-none"
               style={{ backgroundColor: '#3f6212' }}
             >
               Další krok

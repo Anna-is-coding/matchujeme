@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './facts.css';
-import { MatchaCard } from '../../components/MatchaCard/matchacard';
+import { MatchaCard } from '../../components/MatchaCard/Matchacard';
 import { facts } from './factsData';
 
 export const Facts = () => {

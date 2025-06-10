@@ -1,210 +1,235 @@
- :root {
-   --card-bg: #F0F6EE;
-   --card-radius: 16px;
-   --card-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-   --primary-color: rgba(63, 98, 18, 0.95);
-   --text-color: #333;
-   --option-bg: #C8DBCC;
-   --option-hover: #DBE8DC;
-   --progress-bg: #e0e0e0;
-   --progress-fill: var(--primary-color);
-   --radius: 8px;
-   --transition: 0.3s ease-in-out;
- }
+:root {
+  --card-bg: #F0F6EE;
+  --card-radius: 16px;
+  --card-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  --primary-color: rgba(63, 98, 18, 0.95);
+  --text-color: #333;
+  --option-bg: #C8DBCC;
+  --option-hover: #DBE8DC;
+  --progress-bg: #e0e0e0;
+  --progress-fill: var(--primary-color);
+  --radius: 8px;
+  --transition: 0.3s ease-in-out;
+}
 
- .quiz-section {
-   background-color: var(--background-page2);
- }
+.quiz-section {
+  background-color: var(--background-page2);
+}
 
- /* ==============================
+/* ==============================
    Kontejner kvízu – odsazení pod headerem
    ==============================  */
- .quiz-container {
-   width: 100%;
-   max-width: 600px;
-   margin: 0 auto;
-   /* více místa mezi hlavičkou stránky a názvem kvízu  */
-   padding: 4rem 1rem 2rem;
- }
+.quiz-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  /* více místa mezi hlavičkou stránky a názvem kvízu  */
+  padding: 2rem 1rem 4rem;
+}
 
- /* 
- ==============================
+/* ==============================
    Nadpis kvízu
    ==============================  */
- .quiz-title {
-   font-size: 2rem;
-   font-weight: 600;
-   margin: 0 0 1rem;
-   text-align: center;
-   color: var(--text-dark-green);
- }
+.quiz-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  text-align: center;
+  color: var(--text-dark-green);
+}
 
- /* ==============================
+/* ==============================
    Wrapper titulek + karta
    ==============================  */
- .quiz-card {
-   display: flex;
-   flex-direction: column;
-   gap: 1rem;
- }
+.quiz-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
- /* ==============================
+/* ==============================
    Karta + wrapper – nový styl
    ==============================  */
- .card-wrapper {
-   width: 100%;
-   max-width: 600px;
-   margin: 0 auto;
-   perspective: 1200px;
- }
+.card-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  perspective: 1200px;
+}
 
- .question-block {
-   background: var(--card-bg);
-   border-radius: var(--card-radius);
-   box-shadow: var(--card-shadow);
-   padding: 2rem;
-   box-sizing: border-box;
-   display: flex;
-   flex-direction: column;
-   gap: 1.5rem;
-   transform-style: preserve-3d;
- }
+.question-block {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 2rem 2rem 3.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transform-style: preserve-3d;
+}
 
- /* ==============================
+/* ==============================
    Hlavička otázky: navigace + číslo + progress
    ==============================  */
- .question-header {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   width: 100%;
-   margin-bottom: 1rem;
- }
+.question-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
 
- .question-info {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 0.25rem;
- }
+.question-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+}
 
- .question-number {
-   font-size: 0.9rem;
-   color: var(--text-color);
- }
+.nav-buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
- .progress-bar {
-   width: 100%;
-   height: 6px;
-   background: var(--progress-bg);
-   border-radius: 3px;
-   overflow: hidden;
- }
+.question-number {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
 
- .progress-fill {
-   height: 100%;
-   background: var(--progress-fill);
-   width: 0%;
-   transition: width 0.4s ease-in-out;
- }
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--progress-bg);
+  border-radius: 3px;
+  overflow: hidden;
+}
 
- /* ==============================
+.progress-fill {
+  height: 100%;
+  background: var(--progress-fill);
+  width: 0%;
+  transition: width 0.4s ease-in-out;
+}
+
+/* ==============================
    Text otázky
    ==============================  */
- .question-title {
-   color: var(--text-color);
-   font-size: 1.4rem;
-   font-weight: 600;
-   margin: 0;
-   text-align: center;
- }
+.question-title {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
 
- /* ==============================
+/* ==============================
    Seznam možností jako bloky
    ==============================  */
- .options-list {
-   display: flex;
-   flex-direction: column;
-   gap: 0.75rem;
- }
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
- .option-item {
-   display: flex;
-   align-items: center;
-   background: var(--option-bg);
-   border-radius: var(--card-radius);
-   padding: 1rem;
-   cursor: pointer;
-   transition: background 0.2s;
- }
+.option-item {
+  display: flex;
+  align-items: center;
+  background: var(--option-bg);
+  border-radius: var(--card-radius);
+  padding: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
 
- .option-item:hover {
-   background: var(--option-hover);
- }
+.option-item:hover {
+  background: var(--option-hover);
+}
 
- .option-item.selected {
-   background: var(--primary-color);
-   color: #fff;
- }
+.option-item.selected {
+  background: var(--primary-color);
+  color: #fff;
+}
 
- .option-item input {
-   margin-right: 1rem;
-   accent-color: var(--card-bg);
- }
+.option-item input {
+  margin-right: 1rem;
+  accent-color: var(--card-bg);
+}
 
- /* ==============================
+/* ==============================
    Navigační tlačítka
    ==============================  */
- .nav-button {
-   background: var(--primary-color);
-   color: #fff;
-   border: none;
-   border-radius: var(--radius);
-   padding: 0.5rem 1rem;
-   font-size: 0.9rem;
-   cursor: pointer;
-   transition: transform var(--transition);
-   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
- }
+.nav-button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform var(--transition);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
 
- .nav-button:hover:not(:disabled) {
-   transform: scale(1.05);
- }
+.nav-button:hover:not(:disabled) {
+  transform: scale(1.05);
+}
 
- .nav-button:disabled {
-   opacity: 0.5;
-   cursor: default;
- }
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
 
- .prev-button {
-   margin-right: 0.5rem;
- }
-
- .next-button {
-   margin-left: 0.5rem;
- }
-
- /* ==============================
+/* ==============================
    Přechodové třídy pro react-transition-group
    ==============================  */
- .card-enter {
-   transform: rotateY(90deg);
-   opacity: 0.5;
- }
+.card-enter {
+  transform: rotateY(90deg);
+  opacity: 0.5;
+}
 
- .card-enter-active {
-   transform: rotateY(0deg);
-   opacity: 1;
-   transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
- }
+.card-enter-active {
+  transform: rotateY(0deg);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
 
- .card-exit {
-   transform: rotateY(0deg);
-   opacity: 1;
- }
+.card-exit {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
 
- .card-exit-active {
-   transform: rotateY(-90deg);
-   opacity: 0.5;
-   transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
- }
+.card-exit-active {
+  transform: rotateY(-90deg);
+  opacity: 0.5;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+/* ==============================
+   RESPONZIVNÍ VZHLED PRO MOBILY
+   ============================== */
+@media (max-width: 768px) {
+  /* --- Optimalizace mezer --- */
+
+  .quiz-container {
+    /* Snížíme vertikální odsazení celé stránky */
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .question-block {
+    /* Snížíme vnitřní odsazení karty a upravíme spodní mezeru */
+    padding: 1.5rem 1.5rem 2.5rem;
+  }
+
+  /* --- Zmenšení písma --- */
+
+  .quiz-title {
+    font-size: 1.75rem;
+  }
+
+  .question-title {
+    font-size: 1.2rem;
+  }
+}

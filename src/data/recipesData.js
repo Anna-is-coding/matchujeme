@@ -64,7 +64,7 @@ export const recipes = [
   },
 
   {
-    id: 2,
+    id: 4,
     title: 'Cold brew matcha',
     image: '/img/coldBrew.png',
     serving: 1,

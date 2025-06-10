@@ -10,7 +10,7 @@ export const QuestionCard = ({
   onPrev,
   onNext,
 }) => (
-  <div className="question-block">
+  <>
     <div className="question-header">
       <button
         className="nav-button prev-button"
@@ -55,5 +55,5 @@ export const QuestionCard = ({
         </label>
       ))}
     </div>
-  </div>
+  </>
 );

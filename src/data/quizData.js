@@ -61,7 +61,7 @@ export const questions = [
       },
       {
         label:
-          ' Smíchám ji do zeleného smoothie, bowl nebo přidám proteinový prášek.',
+          ' Smíchám ji do zeleného smoothie nebo přidám proteinový prášek.',
         value: 'zdravy',
       },
       {

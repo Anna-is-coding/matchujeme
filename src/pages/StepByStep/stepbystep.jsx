@@ -5,8 +5,8 @@ import './stepbystep.css';
 
 const preparationSteps = {
   1: 'Ohřej vodu na 70°C. ',
-  2: 'Pomocí sítky prosej 1–2 gramy matcha prášku do misky (zamezí hrudkám).',
-  3: 'Přidej trochu vody a rozmetlej bambusovou metličkou, dokud nevznikne jemná pěna',
+  2: 'Pomocí sítka prosej 1–2 gramy matcha prášku do misky (zamezí hrudkám).',
+  3: 'Přidej trochu vody a rozmíchej bambusovou metličkou, dokud nevznikne jemná pěna',
   4: 'Zahřej mléko (nevař!) a vyšlehej ho do pěny – nalij napěněné mléko do šálku s matchou.',
   5: 'Hotovo! Vychutnej si matchu. Přidej med, agáve, vanilkový extrakt nebo skořici podle chuti.',
 };

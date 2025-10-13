@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './header.css';
 import burgerIcon from '/img/burgermenu.svg';
 import closeIcon from '/img/matchaclose.png';
@@ -14,9 +14,9 @@ export const Header = () => {
 
   return (
     <header className="header">
-      <div className="logo-container">
+      <Link to="/" className="logo-container" aria-label="Domů">
         <img src={logo} alt="Logo" className="logo" />
-      </div>
+      </Link>
 
       <img
         className="burgermenu"

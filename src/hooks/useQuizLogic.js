@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { questions, results } from '../data/quizData';
 
 export const useQuizLogic = () => {
@@ -7,6 +7,15 @@ export const useQuizLogic = () => {
   const [answers, setAnswers] = useState({});
   const [resultKeys, setResultKeys] = useState([]);
   const nodeRef = useRef(null);
+
+  // Keep the selected option in sync with any previously saved answer
+  useEffect(() => {
+    const question = questions[currentIndex];
+    if (question) {
+      const previousSelection = answers[question.id] || '';
+      setSelectedOption(previousSelection);
+    }
+  }, [currentIndex, answers]);
 
   const calculateResults = (ans) => {
     const counts = { zen: 0, influencer: 0, zdravy: 0, kofein: 0 };
@@ -43,9 +52,15 @@ export const useQuizLogic = () => {
 
   const handlePrev = () => {
     if (currentIndex > 0) {
-      setSelectedOption(null); 
-      setCurrentIndex(currentIndex - 1); 
+      setCurrentIndex((idx) => idx - 1);
     }
+  };
+
+  const resetQuiz = () => {
+    setCurrentIndex(0);
+    setSelectedOption('');
+    setAnswers({});
+    setResultKeys([]);
   };
 
   return {
@@ -59,5 +74,6 @@ export const useQuizLogic = () => {
     setSelectedOption,
     handleNext,
     handlePrev,
+    resetQuiz,
   };
 };

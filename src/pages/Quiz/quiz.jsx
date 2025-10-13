@@ -17,6 +17,7 @@ export const Quiz = () => {
     setSelectedOption,
     handleNext,
     handlePrev,
+    resetQuiz,
   } = useQuizLogic();
 
   const progressPercent = Math.round(
@@ -24,7 +25,13 @@ export const Quiz = () => {
   );
 
   if (resultKeys.length > 0) {
-    return <QuizResults resultKeys={resultKeys} results={results} />;
+    return (
+      <QuizResults
+        resultKeys={resultKeys}
+        results={results}
+        onRestart={resetQuiz}
+      />
+    );
   }
 
   const currentQuestion = questions[currentIndex];

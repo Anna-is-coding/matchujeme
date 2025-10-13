@@ -10,6 +10,7 @@ import { Quiz } from './pages/Quiz/quiz';
 import { Recipes } from './pages/Recipes/recipes';
 import { StepByStep } from './pages/StepByStep/stepbystep';
 import { Facts } from './pages/Facts/facts';
+import { NotFound } from './pages/NotFound/notfound';
 
 const App = () => (
   <>
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
       },
       { path: 'recipes/:id', element: <Recipes /> },
       { path: 'stepbystep/:stepId', element: <StepByStep /> },
+      { path: '*', element: <NotFound /> },
     ],
   },
 ]);

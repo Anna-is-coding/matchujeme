@@ -1,7 +1,7 @@
 import React from 'react';
 import './QuizResults.css';
 
-export const QuizResults = ({ resultKeys, results }) => {
+export const QuizResults = ({ resultKeys, results, onRestart }) => {
   // Vykreslíme pouze, pokud máme jediný výsledek
   if (resultKeys.length !== 1) return null;
 
@@ -35,7 +35,7 @@ export const QuizResults = ({ resultKeys, results }) => {
             </p>
             <button
               className="next-button"
-              onClick={() => window.location.reload()}
+              onClick={() => (onRestart ? onRestart() : window.location.reload())}
             >
               Zkusit znovu
             </button>

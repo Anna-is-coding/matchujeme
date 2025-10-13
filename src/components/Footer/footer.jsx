@@ -8,4 +8,5 @@ export const Footer = () => {
         <p>Copyright © 2025 Projekt Matchujeme. Vendy a Anička. Digitální akademie Czechitas</p>
       </div>
     </footer>
-  )}
+  );
+};

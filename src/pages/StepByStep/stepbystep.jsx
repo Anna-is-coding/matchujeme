@@ -1,13 +1,13 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { StepCard } from './StepCard';
 import './stepbystep.css';
 
 const preparationSteps = {
   1: 'Ohřej vodu na 70°C. ',
-  2: 'Pomocí sítka prosej 1–2 gramy matcha prášku do misky (zamezí hrudkám).',
-  3: 'Přidej trochu vody a rozmíchej bambusovou metličkou, dokud nevznikne jemná pěna',
-  4: 'Zahřej mléko (nevař!) a vyšlehej ho do pěny – nalij napěněné mléko do šálku s matchou.',
+  2: 'Pomocí sítka prosej 1–2 g matcha prášku do misky.',
+  3: 'Přidej trochu vody a rozmíchej bambusovou metličkou, dokud nevznikne jemná pěna.',
+  4: 'Zahřej mléko (nevař!) a vyšlehej ho do pěny. Poté nalij napěněné mléko do šálku s matchou.',
   5: 'Hotovo! Vychutnej si matchu. Přidej med, agáve, vanilkový extrakt nebo skořici podle chuti.',
 };
 
@@ -46,7 +46,15 @@ export const StepByStep = () => {
               ? 'step step-custom-active'
               : 'step step-custom';
 
-          return <li key={id} className={stepClass}></li>;
+          return (
+            <li key={id} className={stepClass}>
+              <Link
+                to={`/stepbystep/${numericId}`}
+                className="step-link"
+                aria-label={`Krok ${numericId}`}
+              />
+            </li>
+          );
         })}
       </ul>
       {stepContent ? (

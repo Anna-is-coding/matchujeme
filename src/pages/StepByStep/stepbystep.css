@@ -40,3 +40,21 @@
   border: none !important;
   box-shadow: none !important;
 }
+
+/* Make step circles clickable */
+.steps .step {
+  position: relative;
+}
+
+.steps .step .step-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 10;
+}
+
+/* Ensure decorative circles/lines don't block clicks */
+.steps .step::before,
+.steps .step::after {
+  pointer-events: none;
+}

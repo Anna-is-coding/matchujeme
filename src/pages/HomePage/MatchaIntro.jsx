@@ -7,6 +7,7 @@ const MatchaIntro = () => {
             src="/img/matcha-icon1.svg"
             alt="Vítejte"
             className="w-32 h-32 rounded-full mb-4 object-cover"
+            loading="lazy" decoding="async"
           />
           <p className="matchacircle1">
             🌿Vítej v našem zeleném světě – tady se vše točí kolem vůně matchy a
@@ -19,6 +20,7 @@ const MatchaIntro = () => {
             src="/img/matcha-icon1.svg"
             alt="Chill rituál"
             className="w-32 h-32 rounded-full mb-4 object-cover"
+            loading="lazy" decoding="async"
           />
           <p className="matchacircle2">
             🌿Matcha je víc než jen čaj – je to pohoda, styl a způsob, jak na
@@ -31,6 +33,7 @@ const MatchaIntro = () => {
             src="/img/matcha-icon1.svg"
             alt="Matcha zábava"
             className="w-32 h-32 rounded-full mb-4 object-cover"
+            loading="lazy" decoding="async"
           />
           <p className="matchacircle3">
             🌿Objev jednoduché recepty, inspiruj se tipy a triky nebo si dej

@@ -11,11 +11,15 @@ export const StepCard = ({
   return (
     <div className="max-w-5xl w-full mx-auto flex flex-col md:flex-row overflow-hidden rounded-xl shadow-xl border border-green-700 bg-white">
       <div className="w-full md:w-1/2">
-        <img
-          src={currentImage}
-          alt={`Krok ${stepId}`}
-          className="w-full h-auto md:h-full object-cover"
-        />
+        <picture>
+          <source srcSet={currentImage.replace('.png', '.webp')} type="image/webp" />
+          <img
+            src={currentImage}
+            alt={`Krok ${stepId}`}
+            className="w-full h-auto md:h-full object-cover"
+            loading="lazy" decoding="async" width="800" height="600"
+          />
+        </picture>
       </div>
 
       <div

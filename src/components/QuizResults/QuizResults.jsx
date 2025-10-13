@@ -41,7 +41,7 @@ export const QuizResults = ({ resultKeys, results, onRestart }) => {
             </button>
           </div>
           <div className="result-image">
-            <img src={imgSrc} alt={title} />
+            <img src={imgSrc} alt={title} loading="lazy" decoding="async" />
           </div>
         </div>
       </div>

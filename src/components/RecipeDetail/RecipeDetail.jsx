@@ -19,7 +19,10 @@ export const RecipeDetail = ({ recipe }) => {
 
       <div className="recipe-card">
         <div className="image-container">
-          <img src={recipe.image} alt={recipe.title} />
+          <picture>
+            <source srcSet={recipe.image.replace('.png', '.webp')} type="image/webp" />
+            <img src={recipe.image} alt={recipe.title} loading="lazy" decoding="async" width="800" height="450" />
+          </picture>
         </div>
 
         <div className="content-container">

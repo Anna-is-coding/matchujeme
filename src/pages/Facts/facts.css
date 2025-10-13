@@ -67,3 +67,5 @@
   transform: rotateY(180deg);
   font-size: 1rem;
 }
+
+/* image is applied via CSS background on .card-front */

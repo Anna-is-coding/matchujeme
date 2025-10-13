@@ -1,0 +1,53 @@
+:root {
+  --nf-primary: rgba(63, 98, 18, 0.95);
+  /* match quiz --primary-color */
+  --nf-radius: 8px;
+  /* match quiz --radius */
+  --nf-card-bg: #F0F6EE;
+  /* match quiz --card-bg */
+  --nf-card-radius: 16px;
+  /* match quiz --card-radius */
+  --nf-card-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  /* match quiz --card-shadow */
+  --nf-text: #333;
+  /* match quiz --text-color */
+}
+
+.notfound-card {
+  background: var(--nf-card-bg);
+  border-radius: var(--nf-card-radius);
+  box-shadow: var(--nf-card-shadow);
+  padding: 2rem 2rem 3rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.notfound-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  text-align: center;
+  color: var(--nf-text);
+}
+
+.notfound-text {
+  margin: 0 0 1.5rem;
+  color: var(--nf-text);
+}
+
+.notfound-button {
+  background: var(--nf-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--nf-radius);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.notfound-button:hover {
+  transform: scale(1.05);
+}
